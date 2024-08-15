@@ -24,8 +24,8 @@ const addToCart = (target) => {
   totalPrice += price;
   // console.log(totalPrice);
   const totalUpdatedPrice = document.getElementById("total-price");
-  totalUpdatedPrice.innerText = totalPrice;
-  grandTotal.innerText = totalPrice;
+  totalUpdatedPrice.innerText = totalPrice.toFixed(2);
+  grandTotal.innerText = totalPrice.toFixed(2);
 
   //apply coupon
 
@@ -42,10 +42,10 @@ applyBtn.addEventListener("click", () => {
 
   if (inputCoupon.value === "SELL200") {
     const discountedPrice = totalPrice * 0.2;
-    discountElement.textContent = discountedPrice;
+    discountElement.textContent = discountedPrice.toFixed(2);
 
     const finalPrice = totalPrice - discountedPrice;
 
-    grandTotal.innerText = finalPrice;
+    grandTotal.innerText = finalPrice.toFixed(2);
   }
 });
