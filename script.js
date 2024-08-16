@@ -40,12 +40,19 @@ const addToCart = (target) => {
 applyBtn.addEventListener("click", () => {
   console.log(inputCoupon);
 
-  if (inputCoupon.value === "SELL200") {
+  if (inputCoupon.value === "summer200") {
     const discountedPrice = totalPrice * 0.2;
     discountElement.textContent = discountedPrice.toFixed(2);
 
     const finalPrice = totalPrice - discountedPrice;
 
     grandTotal.innerText = finalPrice.toFixed(2);
+  } else {
+    const div = document.getElementById("div");
+    const p = document.createElement("p");
+    p.innerText = "Wrong coupon code";
+    p.style.color = "red";
+
+    div.appendChild(p);
   }
 });
